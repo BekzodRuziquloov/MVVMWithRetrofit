@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import space.beka.mvvmwithretrofit.model.User
 
 interface UserApi {
-    @GET("posts")
+    @GET("plan")
     fun getUser():Single<List<User>>
 }

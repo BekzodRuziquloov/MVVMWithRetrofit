@@ -25,11 +25,9 @@ class UserViewModel : ViewModel() {
                     override fun onSuccess(value: List<User>?) {
                         users.value = value
                     }
-
                     override fun onError(e: Throwable?) {
                         e!!.printStackTrace()
                     }
-
                 })
         )
     }

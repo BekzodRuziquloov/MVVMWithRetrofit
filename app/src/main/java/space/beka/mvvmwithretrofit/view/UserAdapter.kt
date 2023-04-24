@@ -11,8 +11,10 @@ class UserAdapter(var list: ArrayList<User>) : RecyclerView.Adapter<UserAdapter.
         RecyclerView.ViewHolder(itemRvBinding.root) {
         fun onBind(user: User, position: Int) {
             itemRvBinding.userId.text = user.id.toString()
-            itemRvBinding.userBody.text = user.body
-            itemRvBinding.userTitle.text = user.title
+            itemRvBinding.sarlavha.text = user.sarlavha
+            itemRvBinding.matn.text = user.matn
+            itemRvBinding.oxirgiMuddat.text = user.oxirgi_muddat
+            itemRvBinding.holat.text = user.holat
         }
     }
 

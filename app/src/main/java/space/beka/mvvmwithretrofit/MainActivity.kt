@@ -1,7 +1,7 @@
 package space.beka.mvvmwithretrofit
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import space.beka.mvvmwithretrofit.databinding.ActivityMainBinding
@@ -18,9 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         userViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
         userViewModel.refresh()
-        binding.rv.apply {
-            adapter = adapters
-        }
+
     observeViewModel()
     }
 
@@ -28,6 +26,9 @@ class MainActivity : AppCompatActivity() {
         userViewModel.users.observe(this , Observer {
             it.let {
                 adapters.updateList(it)
+            }
+            binding.rv.apply {
+                adapter = adapters
             }
         })
     }
